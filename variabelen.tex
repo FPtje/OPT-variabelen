@@ -28,12 +28,19 @@ $\textbf{c}$ & Kostenvector. Bevat alle kostencoëfficiënten.\\ & Deze kosten z
 \hline 
 $\textbf{x}$ & Vector van beslissingsvariabelen. \\ & Hiervan worden de waarden veranderd door de simplex methode. \\ & $\textbf{x} = \{x_1, x_2, ... x_n\}$. \\
 \hline
-$\textbf{x}^*$ & De invulling van waarden voor $\textbf{x}$ die de optimale oplossing karakteriseert. \\
+$\textbf{x}^*$ & De invulling van waarden voor $\textbf{x}$ die de optimale oplossing karakteriseert. \\ % Zie 1.3
 \hline
-$\textbf{A}$ & Constraint matrix. Constant. \\ & Rijen hieruit zijn vectors van constanten die de lineaire functie in de constraint vormen.\\
+$\textbf{A}$ & Constraint matrix. Constant. \\ 
+ & Rijen hieruit zijn vectors van constanten die de lineaire functie in de constraint vormen. \\
+ & $\textbf{A}$ is op te delen in matrices $\textbf{B}$ en $\textbf{N}$. \\ % Zie 2.3
 \hline
 $a_{11}, a_{12}, ..., a_{mn}$ & Technological coefficients. Elementen uit de constraint matrix $\textbf{A}$.\\
 & Iedere $a_{i1}, a_{i2}, ... a_{in}$ wordt vermenigvuldigd met $x_1, x_2, ... x_n$ in de constraints. \\
+\hline
+$\textbf{B}$ & Basismatrix. Deze is altijd regulier (vierkant) en inverteerbaar. \\ % Zie 2.3
+& $\textbf{B}$ bestaat uit de kolommen van $\textbf{A}$ die een basis vormen. \\
+\hline
+$\textbf{N}$ & Non-basismatrix. De kolommen van $\textbf{A}$ die niet in $\textbf{B}$ zitten. \\
 \hline
 $\textbf{b}$ & Right-hand-side vector. Bevat de waarden waar de constraints aan moeten voldoen.\\
  & $\textbf{b} = \{b_1, b_2, ..., b_n\}$\\
@@ -44,7 +51,7 @@ $\displaystyle\sum\limits_{j=1}^n c_jx_j$ & Objective function. Andere schrijfwi
 \hline
 $\textbf{z}$ & Objective value. De uitkomstwaarde van de objective function. $\textbf{z} = \textbf{cx}$.\\
 \hline
-$\textbf{z}^*$ & De objective value van de optimale oplossing, bijv. de maximale winst in euro's. \\
+$\textbf{z}^*$ & De objective value van de optimale oplossing, bijv. de maximale winst in euro's. \\ % Zie 1.3
  & $\textbf{z}^* = \textbf{cx}^*$ \\
 \hline
 $\textbf{Ax} \geq \textbf{b}$ & Alle constraints (behalve de non-negativity constraints.)\\
