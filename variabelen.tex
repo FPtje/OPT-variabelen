@@ -24,6 +24,8 @@ $\textbf{c}$ & Kostenvector. Bevat alle kostencoëfficiënten.\\ & Deze kosten z
 \hline 
 $\textbf{x}$ & Vector van beslissingsvariabelen. \\ & Hiervan worden de waarden veranderd door de simplex methode. \\ & $\textbf{x} = \{x_1, x_2, ... x_n\}$. \\
 \hline
+$\textbf{x}^*$ & De invulling van waarden voor $\textbf{x}$ die de optimale oplossing karakteriseert. \\
+\hline
 $\textbf{A}$ & Constraint matrix. Constant. \\ & Rijen hieruit zijn vectors van constanten die de lineaire functie in de constraint vormen.\\
 \hline
 $a_{11}, a_{12}, ..., a_{mn}$ & Technological coefficients. Elementen uit de constraint matrix $\textbf{A}$.\\
@@ -37,6 +39,9 @@ $\textbf{cx}$ & Objective function/criterion function/doelfunctie. \\ & 	Dit is 
 $\displaystyle\sum\limits_{j=1}^n c_jx_j$ & Objective function. Andere schrijfwijze. \\
 \hline
 $\textbf{z}$ & Objective value. De uitkomstwaarde van de objective function. $\textbf{z} = \textbf{cx}$.\\
+\hline
+$\textbf{z}^*$ & De objective value van de optimale oplossing, bijv. de maximale winst in euro's. \\
+ & $\textbf{z}^* = \textbf{cx}^*$ \\
 \hline
 $\textbf{Ax} \geq \textbf{b}$ & Alle constraints (behalve de non-negativity constraints.)\\
 $\textbf{Ax} \leq \textbf{b}$ & Let op, dit is alleen zo te schrijven als \\
