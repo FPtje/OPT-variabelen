@@ -1,0 +1,66 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[left=1.5cm,right=1.5cm,top=1.5cm,bottom=1.5cm]{geometry}
+
+\title{Variabelen in optimalisering en complexiteit}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+
+Aan dit document kunnen geen rechten worden ontleend. Er is geen garantie van correctheid van dit document. Dit document zal regelmatig geüpdate worden met verbeteringen en nieuwe variabelen. Houd het dus in de gaten.
+
+
+\begin{tabular}{|c|l|}
+\hline
+$M_{ij}$ & Enkel element van matrix $M$ uit \textit{rij} $i$ en \textit{kolom} $j$. $M_{11}$ is het element linksboven.\\
+\hline 
+$\textbf{c}$ & Kostenvector. Bevat alle kostencoëfficiënten.\\ & Deze kosten zijn altijd constant.\\ 
+
+ & $c_1, c_1, ... c_n$ zijn de individuele kosten. \\ & $\textbf{c} = \{c_1, c_2, ..., c_n\}$. \\ 
+\hline 
+$\textbf{x}$ & Vector van beslissingsvariabelen. \\ & Hiervan worden de waarden veranderd door de simplex methode. \\ & $\textbf{x} = \{x_1, x_2, ... x_n\}$. \\
+\hline
+$\textbf{A}$ & Constraint matrix. Constant. \\ & Rijen hieruit zijn vectors van constanten die de lineaire functie in de constraint vormen.\\
+\hline
+$a_{11}, a_{12}, ..., a_{mn}$ & Technological coefficients. Elementen uit de constraint matrix $\textbf{A}$.\\
+& Iedere $a_{i1}, a_{i2}, ... a_{in}$ wordt vermenigvuldigd met $x_1, x_2, ... x_n$ in de constraints. \\
+\hline
+$\textbf{b}$ & Right-hand-side vector. Bevat de waarden waar de constraints aan moeten voldoen.\\
+ & $\textbf{b} = \{b_1, b_2, ..., b_n\}$\\
+\hline
+$\textbf{cx}$ & Objective function/criterion function/doelfunctie. \\ & 	Dit is wat je maximaliseert of minimaliseert.\\
+\hline
+$\displaystyle\sum\limits_{j=1}^n c_jx_j$ & Objective function. Andere schrijfwijze. \\
+\hline
+$\textbf{z}$ & Objective function. Functie alias.\\
+\hline
+$\textbf{Ax} \geq \textbf{b}$ & Alle constraints (behalve de non-negativity constraints.)\\
+$\textbf{Ax} \leq \textbf{b}$ & Let op, dit is alleen zo te schrijven als \\
+$\textbf{Ax} = \textbf{b}$ & het (on)gelijkheidsteken hetzelfde is bij alle constraints.\\
+\hline
+$\displaystyle\sum\limits_{j=1}^n a_{ij}x_j \ge b_i$ & Één constraint, oftewel één rij uit de ``subject to''.\\
+ & Hier is te zien dat dat er een rij uit $\textbf{A}$ wordt gepakt, vermenigvuldigd \\ &  wordt met $\textbf{x}$ en vergeleken wordt met een element uit $\textbf{b}$. \\
+\hline
+$x_1, x_2, ..., x_n \geq 0$ & Nonnegativity constraints. \\ & Triviale constraints dat je beslissingsvariabelen niet negatief mogen worden.\\ 
+\hline
+Feasible point & Een assignment van waarden voor variabelen $x_1, ..., x_n$ die voldoet aan alle constraints. \\ 
+& Een feasible point is een mogelijke oplossing voor het probleem.\\
+\hline
+Feasible region & De ruimte die bestaat uit alle feasible points. Heeft de vorm van een simplex. \\
+\hline
+Slack variable & Beslissingsvariabele die toegevoegd wordt om een constraint in de vorm \\ &van een ongelijkheid naar een gelijkheid (van b.v. $\textbf{Ax} \geq \textbf{b}$ naar $\textbf{Ax} = \textbf{b}$.)\\
+& Bij een slack variable hoort weer een extra kolom bij de $\textbf{A}$ matrix. \\
+\hline
+Standard form & Notatie van optimaliseringsprobleem waar alle constraints gelijkheden zijn.\\
+\hline
+Canonical form & Notatie van optimaliseringsprobleem waar alle constraints ongelijkheden zijn.\\
+ & Specifiek: $\le$ bij maximalisering en $\geq$ bij minimalisering. \\
+\hline
+ & \\
+\hline
+\end{tabular} 
+\end{document}
