@@ -6,4 +6,6 @@ Het pdf bestand van dit document is te downloaden op:
 https://dl.dropboxusercontent.com/u/6766710/opt/variabelen.pdf
 
 # Help mee!
-Als u fouten vindt of variabelen wilt toevoegen, kunt u een pull request sturen. Dit kan direct via deze site, maar kan ook via het git protocol. U kunt ook een discussie starten over de variabelen door een issue te maken.
+Als u fouten vindt of variabelen wilt toevoegen, kan dat via "git" of via deze site. Via de site is het simpelst: klik boven op "variabelen.tex" om de broncode van het LaTeX document te bekijken. Bovenaan staat dan een "Edit" knop waarmee het bestand aangepast kan worden. Van daaruit wijst het zichzelf uit. Veranderingen worden niet direct officiëel, ze moeten eerst goedgekeurd worden. Ik zou het fijn vinden als er geen veranderingen gemaakt worden die ervoor zorgen dat LaTeX fouten geeft bij het compileren.
+
+Vragen of discussies kunnen rechts in de Issues pagina aangemaakt worden.
