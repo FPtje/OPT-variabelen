@@ -71,7 +71,7 @@ $z$ & Objective value. De uitkomstwaarde van de objective function. $z = \textbf
 \hline
 $z_0$ & De objective value bij een basisoplossing. $z_0 = \textbf{c}_B\textbf{B}^{-1}\textbf{b}$. Zie formules. \\
 \hline
-$z_j$ & $z_j = \textbf{c}_B\textbf{B}^{-1}\textbf{a}_j$ voor $j$ die overeenkomt met een kolom uit $\textbf{N}$. \\
+$z_j$ & $z_j = \textbf{c}_B\textbf{B}^{-1}\textbf{a}_j$ voor $j \in J$. Korte schrijfwijze voor een vaak gebruikte formule. \\
 \hline
 $z^*$ & De objective value van de optimale oplossing, bijv. de maximale winst in euro's. \\ % Zie 1.3
  & $z^* = \textbf{cx}^*$ \\
@@ -150,6 +150,34 @@ $z = \textbf{c}_B\textbf{x}_B + 0$ & aangezien $\textbf{x}_N = 0$ (definitie bas
 $z = \textbf{c}_B\textbf{B}^{-1}\textbf{b}$ & Invulling $\textbf{x}_B = \textbf{B}^{-1}\textbf{b}$
 \end{tabular}
 
+
+
+\item[$z = z_0 - \displaystyle\sum\limits_{j \in J} (z_j - c_j)x_j $] \hfill \\
+Bij zowel de formule voor $z_0$ en bij de formule voor $\textbf{x}_B$ is de factor $\textbf{x}_N$ weggelaten omdat $\textbf{x}_N = 0$. Echter, als je de simplex methode toepast, ga je van de ene basis naar de andere. Hierbij is het fijn om te weten welke variabelen je in de basis wil hebben. Om hierachter te komen, moet je weten welke variabelen de grootste verbetering oplevert. Hierbij heb je een definitie van de objective value nodig waar $\textbf{x}_N$ wel meegerekend wordt.
+
+Definitie voor $\textbf{x}_B$ zonder de aanname dat $\textbf{x}_N = 0$ (uit het boek, hoofdstuk 3.3):
+
+\begin{tabular}{l l l l}
+$\textbf{Bx}_B + \textbf{Nx}_N$ & = & $\textbf{b}$ & $\textbf{Ax} = \textbf{b}$ opdelen in basisgedeelte en non-basisgedeelte \\
+$\textbf{B}^ {-1}\textbf{Bx}_B + \textbf{B}^ {-1}\textbf{Nx}_N$ & = & $\textbf{B}^ {-1}\textbf{b}$ & beide kanten voorvermenigvuldigen met $\textbf{B}^{-1}$ \\
+$\textbf{Ix}_B + \textbf{B}^ {-1}\textbf{Nx}_N$ & = & $\textbf{B}^ {-1}\textbf{b}$ & omdat geldt: $\textbf{B}^{-1}\textbf{B} = I$ \\
+$\textbf{x}_B + \textbf{B}^ {-1}\textbf{Nx}_N$ & = & $\textbf{B}^ {-1}\textbf{b}$ & \\
+$\textbf{x}_B$ & = & $\textbf{B}^{-1}\textbf{b} - \textbf{B}^ {-1}\textbf{Nx}_N$ & naar de andere kant halen \\
+$\textbf{x}_B$ & = & $\textbf{B}^{-1}\textbf{b} - \displaystyle\sum\limits_{j \in J}\textbf{B}^ {-1}\textbf{a}_j x_j$ & Herschrijven in sommatievorm, zie variabelen voor J \\
+\end{tabular}
+
+Nu de definitie voor de objective function $z$, ook zonder de aanname dat $\textbf{x}_N = 0$. Deze komt ook uit het boek, hoofdstuk 3.3, maar in het boek nemen ze erg grote stappen. De stappen hier zijn een stuk kleiner. Dit moet een stuk beter te begrijpen zijn.
+
+\begin{tabular}{l l}
+$z = \textbf{cx}$ & formule objective function \\
+$z = \textbf{c}_B \textbf{x}_B + \textbf{c}_N \textbf{x}_N$ & opdelen in basisgedeelte en non-basis gedeelte \\
+$z = \textbf{c}_B \textbf{x}_B + \displaystyle\sum\limits_{j \in J}c_j x_j$ & herschrijven naar sommatienotatie, zie variabelen voor $J$ \\
+$z = \textbf{c}_B (\textbf{B}^{-1}\textbf{b} - \displaystyle\sum\limits_{j \in J}\textbf{B}^ {-1}\textbf{a}_j x_j) + \displaystyle\sum\limits_{j \in J}c_j x_j$ & De definitie van $\textbf{x}_B$ van zojuist invullen voor $\textbf{x}_B$ \\
+$z = \textbf{c}_B \textbf{B}^{-1}\textbf{b} - \displaystyle\sum\limits_{j \in J}\textbf{c}_B \textbf{B}^ {-1}\textbf{a}_j x_j + \displaystyle\sum\limits_{j \in J}c_j x_j$ & haakjes wegwerken \\
+$z = z_0 - \displaystyle\sum\limits_{j \in J}\textbf{c}_B \textbf{B}^ {-1}\textbf{a}_j x_j + \displaystyle\sum\limits_{j \in J}c_j x_j$ & er geldt $z_0 = \textbf{c}_B\textbf{B}^{-1}\textbf{b}$ (zie formules), herschrijven dus \\
+$z = z_0 - \displaystyle\sum\limits_{j \in J}z_j x_j + \displaystyle\sum\limits_{j \in J}c_j x_j$ & er geldt $z_j = \textbf{c}_B \textbf{B}^ {-1}\textbf{a}_j$ (zie variabelen), herschrijven dus \\
+$z = z_0 - \displaystyle\sum\limits_{j \in J}(z_j - c_j) x_j$ & sommaties samenvoegen \\
+\end{tabular}
 
 
 
