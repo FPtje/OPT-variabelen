@@ -60,10 +60,10 @@ $\textbf{cx}$ & Objective function/criterion function/doelfunctie. \\ & 	Dit is 
 \hline
 $\displaystyle\sum\limits_{j=1}^n c_jx_j$ & Objective function. Andere schrijfwijze. \\
 \hline
-$\textbf{z}$ & Objective value. De uitkomstwaarde van de objective function. $\textbf{z} = \textbf{cx}$.\\
+$z$ (soms $z_0$) & Objective value. De uitkomstwaarde van de objective function. $z = \textbf{cx}$.\\
 \hline
-$\textbf{z}^*$ & De objective value van de optimale oplossing, bijv. de maximale winst in euro's. \\ % Zie 1.3
- & $\textbf{z}^* = \textbf{cx}^*$ \\
+$z^*$ & De objective value van de optimale oplossing, bijv. de maximale winst in euro's. \\ % Zie 1.3
+ & $z^* = \textbf{cx}^*$ \\
 \hline
 $\textbf{Ax} \geq \textbf{b}$ & Alle constraints (behalve de non-negativity constraints.)\\
 $\textbf{Ax} \leq \textbf{b}$ & Let op, dit is alleen in de matrixnotatie te schrijven als \\
@@ -122,6 +122,20 @@ $\textbf{Bx}_B = \textbf{b}_B$ -- Basisgedeelte van $\textbf{Ax} = \textbf{b}$ \
 $\textbf{B}^ {-1}\textbf{Bx}_B = \textbf{B}^ {-1}\textbf{b}_B$ -- beide kanten voorvermenigvuldigen met $\textbf{B}^ -1$ \\
 $\textbf{Ix}_B = \textbf{B}^ {-1}\textbf{b}_B$ -- $\textbf{B}^{-1}\textbf{B} = I$ \\
 $\textbf{x}_B = \textbf{B}^{-1}\textbf{b}$
+
+
+
+\item[$z = \textbf{c}_B\textbf{B}^{-1}\textbf{b}$] \hfill \\
+Dit is de objectieve function $z = \textbf{cx}$ (zie variabelen), maar dan ingevuld met een basisoplossing (zie termen).
+
+\textbf{Afleiding:} \\
+Herschrijven geeft:
+
+$z = \textbf{cx}$ -- objective function \\
+$z = \textbf{c}_B\textbf{x}_B + \textbf{c}_N\textbf{x}_N$ -- Opdelen in basisgedeelte en non-basisgedeelte \\
+$z = \textbf{c}_B\textbf{x}_B + 0$ -- Aangezien $\textbf{c}_N\textbf{x}_N = 0$ (definitie basisoplossing), kan deze factor worden weggelaten. \\
+$z = \textbf{c}_B\textbf{B}^{-1}\textbf{b}$ -- Invulling $\textbf{x}_B = \textbf{B}^{-1}\textbf{b}$
+
 \end{description}
 
 \end{document}
