@@ -90,6 +90,12 @@ Standard form & Notatie van optimaliseringsprobleem waar alle constraints gelijk
 \hline
 Canonical form & Notatie van optimaliseringsprobleem waar alle constraints ongelijkheden zijn.\\
  & Specifiek: $\le$ bij maximalisering en $\geq$ bij minimalisering. \\
+\hline
+Basisoplossing & Een invulling van $\textbf{x}$ die hoort bij een bepaalde basis $\textbf{B}$. \\
+ & Bij een basisoplossing geldt altijd dat $\textbf{x}_N = 0$ en $\textbf{x}_B = B^{-1}b$ (zie formules) \\
+ & Een basisoplossing is altijd een toegestane oplossing, maar het is \textit{niet} altijd optimaal. \\
+ & Een basisoplossing komt overeen met een extreem punt. \\
+ & een ''\textit{degenerate basic solution}`` is een basisoplossing waarbij $x_{Bi}$ = 0 voor één of meer $i$. \\
 %\hline
 % & \\
 \hline
@@ -97,7 +103,23 @@ Canonical form & Notatie van optimaliseringsprobleem waar alle constraints ongel
 
 \section*{Formules}
 \begin{description}
-\item
+\item[$\textbf{x}_B = \textbf{B}^{-1}\textbf{b}$] \hfill \\
+Dit is een basisoplossing (zie termen en hoofdstuk 3.2) in het LP probleem waar geldt $\textbf{Ax} = \textbf{b}$.
+Deze basisoplossing hoort bij een basis $\textbf{B}$.
+
+\textbf{Afleiding:} \\
+Als matrix $\textbf{A}$ is opgedeeld in matrices $\textbf{B}$ en $\textbf{N}$, dan zijn de constraints ook zo op te delen:
+
+$\textbf{Ax} = \textbf{b}$ bestaat dus uit twee delen: \\
+$\textbf{Bx}_B = \textbf{b}_B$ en \\
+$\textbf{Nx}_N = \textbf{b}_N$
+
+Bij een basisoplossing geldt $\textbf{x}_N = 0$ (definitie). Die tweede formule is dus niet interessant. De waarden van $\textbf{x}_B$ zijn wel interessant:
+
+$\textbf{Bx}_B = \textbf{b}_B$ -- Basisgedeelte van $\textbf{Ax} = \textbf{b}$ \\
+$\textbf{B}^ {-1}\textbf{Bx}_B = \textbf{B}^ {-1}\textbf{b}_B$ -- beide kanten voorvermenigvuldigen met $\textbf{B}^ -1$ \\
+$\textbf{Ix}_B = \textbf{B}^ {-1}\textbf{b}_B$ -- $\textbf{B}^{-1}\textbf{B} = I$ \\
+$\textbf{x}_B = \textbf{B}^{-1}\textbf{b}$
 \end{description}
 
 \end{document}
