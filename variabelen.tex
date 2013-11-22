@@ -58,11 +58,17 @@ $\textbf{b}$ & Right-hand-side vector. Bevat de waarden waar de constraints aan 
 \hline
 $\overline{\textbf{b}}$ & $\overline{\textbf{b}} = \textbf{B}^{-1}\textbf{b}$. Omdat $\textbf{B}^{-1}\textbf{b}$ vaak gebruikt wordt, wordt het afgekort met $\overline{\textbf{b}}$. Zie formules. \\
 \hline
+$\textbf{y}_j$ & $\textbf{y}_j = \textbf{B}^{-1}\textbf{a}_j$ waarbij $j$ een index uit $\textbf{N}$ is. \\
+\hline
 $\textbf{cx}$ & Objective function/criterion function/doelfunctie. \\ & 	Dit is wat je maximaliseert of minimaliseert.\\
 \hline
 $\displaystyle\sum\limits_{j=1}^n c_jx_j$ & Objective function. Andere schrijfwijze. \\
 \hline
-$z$ (soms $z_0$) & Objective value. De uitkomstwaarde van de objective function. $z = \textbf{cx}$.\\
+$z$ & Objective value. De uitkomstwaarde van de objective function. $z = \textbf{cx}$.\\
+\hline
+$z_0$ & De objective value bij een basisoplossing. $z_0 = \textbf{c}_B\textbf{B}^{-1}\textbf{b}$. Zie formules. \\
+\hline
+$z_j$ & $z_j = \textbf{c}_B\textbf{B}^{-1}\textbf{a}_j$ voor $j$ die overeenkomt met een kolom uit $\textbf{N}$. \\
 \hline
 $z^*$ & De objective value van de optimale oplossing, bijv. de maximale winst in euro's. \\ % Zie 1.3
  & $z^* = \textbf{cx}^*$ \\
@@ -127,7 +133,7 @@ $\textbf{x}_B = \textbf{B}^{-1}\textbf{b}$
 
 
 
-\item[$z = \textbf{c}_B\textbf{B}^{-1}\textbf{b}$] \hfill \\
+\item[$z_0 = \textbf{c}_B\textbf{B}^{-1}\textbf{b}$] \hfill \\
 Dit is de objectieve function $z = \textbf{cx}$ (zie variabelen), maar dan ingevuld met een basisoplossing (zie termen).
 
 \textbf{Afleiding:} \\
