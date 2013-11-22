@@ -35,15 +35,15 @@ $\textbf{x}_j$ & In het boek (hoofdstuk 2 en 3) wordt de \textit{dikgedrukte} $\
 \hline
 $\textbf{A}$ & Constraint matrix. Constant. \\ 
  & Rijen hieruit zijn vectors van constanten die de lineaire functie in de constraint vormen. \\
- & $\textbf{A}$ is op te delen in matrices $\textbf{B}$ en $\textbf{N}$. \\ % Zie 2.3
+ & $\textbf{A}$ is op te delen in matrices $\textbf{B}$ en $\textbf{N}$ (geschreven: $\textbf{A} = [\textbf{B}, \textbf{N}]$.) \\ % Zie 2.3
 \hline
 $a_{11}, a_{12}, ..., a_{mn}$ & Naam uit boek: technological coefficients. Elementen uit de constraint matrix $\textbf{A}$.\\
 & Iedere $a_{i1}, a_{i2}, ... a_{in}$ wordt vermenigvuldigd met $x_1, x_2, ... x_n$ in de constraints. \\
 \hline
 $\textbf{B}$ & Basismatrix. Deze is altijd regulier (vierkant) en inverteerbaar. \\ % Zie 2.3
-& $\textbf{B}$ bestaat uit de kolommen van $\textbf{A}$ die een basis vormen. \\
+& $\textbf{B}$ bestaat uit een selectie van kolommen uit $\textbf{A}$.  \\
 \hline
-$\textbf{N}$ & Non-basismatrix. De kolommen van $\textbf{A}$ die niet in $\textbf{B}$ zitten. \\
+$\textbf{N}$ & Non-basismatrix. $\textbf{N}$ bestaat uit de kolommen van $\textbf{A}$ die niet in de basis $\textbf{B}$ zitten. \\
 \hline
 $\textbf{b}$ & Right-hand-side vector. Bevat de waarden waar de constraints aan moeten voldoen.\\
  & $\textbf{b} = \{b_1, b_2, ..., b_n\}$\\
@@ -78,8 +78,8 @@ Standard form & Notatie van optimaliseringsprobleem waar alle constraints gelijk
 \hline
 Canonical form & Notatie van optimaliseringsprobleem waar alle constraints ongelijkheden zijn.\\
  & Specifiek: $\le$ bij maximalisering en $\geq$ bij minimalisering. \\
-\hline
- & \\
+%\hline
+% & \\
 \hline
 \end{tabular} 
 \end{document}
