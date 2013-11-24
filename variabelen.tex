@@ -47,10 +47,10 @@ $\textbf{B}$ & Basismatrix. Deze is altijd regulier (vierkant) en inverteerbaar.
 \hline
 $\textbf{N}$ & Non-basismatrix. $\textbf{N}$ bestaat uit de kolommen van $\textbf{A}$ die niet in de basis $\textbf{B}$ zitten. \\
 \hline
-$\textbf{x}_B$ & De vector van beslissingsvariabelen die overeenkomen met de basismatrix. \\
+$\textbf{x}_B$ & Basisvariabelen. De vector van beslissingsvariabelen die overeenkomen met de basismatrix. \\
 & Stel $\textbf{B} = [\textbf{a}_3, \textbf{a}_5, \textbf{a}_2]$ (kolommen 3, 5 en 2 uit matrix $\textbf{A}$) dan is $\textbf{x}_B$ = $\{x_3, x_5, x_2\}$. \\
 \hline
-$\textbf{x}_N$ & De vector van beslissingsvariabelen die overeenkomen met de non-basismatrix $\textbf{N}$. \\
+$\textbf{x}_N$ & Non-basisvariabelen. De vector van beslissingsvariabelen die niet in de basis zitten. \\
  & $\textbf{x} = \textbf{x}_B \cup \textbf{x}_N$. \\
 \hline
 $\textbf{c}_B$ en $\textbf{c}_N$ & Hetzelfde idee als $\textbf{x}_B$ en $\textbf{x}_N$, maar dan voor de kostencoëfficienten. \\
@@ -63,7 +63,7 @@ $\overline{\textbf{b}}$ & $\overline{\textbf{b}} = \textbf{B}^{-1}\textbf{b}$. O
 $J$ & De set van indices van de kolommen uit $\textbf{A}$ die $\textbf{N}$ definiëren (dus de nummers van alle \\
 & kolommen die niet in de basis zitten) \\
 \hline
-$\textbf{y}_j$ & $\textbf{y}_j = \textbf{B}^{-1}\textbf{a}_j$ waarbij $j \in J$. \\
+$\textbf{y}_j$ & $\textbf{y}_j = \textbf{B}^{-1}\textbf{a}_j$ waarbij $j \in J$. Dit is de vector van waarden die van $\textbf{x}_B$ worden afgetrokken \\ & als je non-basisvariabele $x_j$ met één verhoogt. \\
 \hline
 $\textbf{cx}$ & Objective function/criterion function/doelfunctie. \\ & 	Dit is wat je maximaliseert of minimaliseert.\\
 \hline
@@ -157,6 +157,7 @@ $z = \textbf{c}_B\textbf{B}^{-1}\textbf{b}$ & Invulling $\textbf{x}_B = \textbf{
 \item[$z = z_0 - \displaystyle\sum\limits_{j \in J} (z_j - c_j)x_j $] \hfill \\
 Bij zowel de formule voor $z_0$ en bij de formule voor $\textbf{x}_B$ is de factor $\textbf{x}_N$ weggelaten omdat $\textbf{x}_N = 0$. Echter, als je de simplex methode toepast, ga je van de ene basis naar de andere. Hierbij is het fijn om te weten welke variabelen je in de basis wil hebben. Om hierachter te komen, moet je weten welke variabelen de grootste verbetering oplevert. Hierbij heb je een definitie van de objective value nodig waar $\textbf{x}_N$ wel meegerekend wordt.
 
+\textbf{Afleiding:} \\
 Definitie voor $\textbf{x}_B$ zonder de aanname dat $\textbf{x}_N = 0$ (uit het boek, hoofdstuk 3.3):
 
 \begin{tabular}{l l l l}
@@ -182,6 +183,34 @@ $z = z_0 - \displaystyle\sum\limits_{j \in J}(z_j - c_j) x_j$ & sommaties samenv
 \end{tabular}
 
 
+
+\item[$(z_j - c_j)x_j$ (of nog korter: $z_j - c_j$)] \hfill Zie hoofdstuk 3.4 \\
+Dit is een stukje uit de formule $z = z_0 - \displaystyle\sum\limits_{j \in J} (z_j - c_j)x_j$ die heel vaak los van zijn formule is te zien. In de formule is de objectieve waarde van alle basisingsvariabelen verwerkt in het enkele getal $z_0$. De objectieve waarde van alle non-basisvariabelen staan in de formule als $\displaystyle\sum\limits_{j \in J} (z_j - c_j)x_j$ uitgedrukt. De uitleg van $(z_j - c_j)x_j$ is het best op te delen in een stuk over $z_j$ en een stukje over $c_j$:
+
+\textbf{Betekenis van $z_j$:}
+
+
+In de lijst met variabelen (en in de afleiding van de vorige formule) staat dat $z_j$ een afkorting is: \\
+$z_j = c_B \textbf{y}_j = c_B(B^{-1}\textbf{a}_j)$. Dit zijn de kostencoëfficiënten van de basisvariabelen ($c_B$), vermenigvuldigd met $B^{-1}$ vermenigvuldigd met de kolom uit $A$ die bij non-basisvariabele $j$ hoort.
+
+Nu is gegeven (hoofdstuk 3.4) dat als je de waarde van een non-basisvariabele $x_k$ verhoogt (terwijl je de andere non-basisvariabelen op 0 houdt), dan heeft dat een effect op de waardes van de basisvariabelen. 
+Stel je verhoogt de waarde van non-basisvariabele $x_k$ met het getal $1$. Omdat $x_k$ niet in de basis zat, was de waarde ervan $0$. De nieuwe waarde is dus $1$. Na deze verhoging veranderen alle basisvariabelen $x_{B1}, x_{B2}, ..., x_{Bm}$ respectievelijk met waardes $-1 \cdot y_{1k}, -1 \cdot y_{2k}, ..., -1 \cdot y_{mk}$. In kolomnotatie: $\textbf{x}_B \rightarrow \textbf{x}_B - 1 \cdot \textbf{y}_k$. 
+
+Aangezien de waardes van de basisvariabelen veranderen, verandert ook hun bijdrage aan de objectieve waarde. $z_0 \rightarrow z_0 - 1 \cdot \textbf{c}_B \textbf{y}_k$. Dit staat precies zo in de formule $z = \underline{z_0 -} \displaystyle\sum\limits_{j \in J} (\underline{z_j} - c_j)x_j$, omdat $\textbf{c}_B \textbf{y}_k = z_j$.
+
+\underline{Kortom:} $z_j$ is hoeveel de bijdrage van de basisvariabelen aan de objective value wordt \textit{verminderd} per eenheid dat je non-basisvariabele $x_j$ verhoogt. Letterlijk uit het boek (p. 111):
+\begin{quote}
+	The saving (a negative saving means more cost) that results from the modification of the basic variables, as the result of increasing $x_k$ by one unit, [...], is $z_k$
+\end{quote}
+
+\textbf{Betekenis van $c_j$}
+
+Het gehele effect van het verhogen van non-basisvariabele $x_j$ is $(z_j - c_j) x_j$. Als je $x_j$ verhoogt, veranderen niet alleen de waardes van de basisvariabelen. De waarde van $x_j$ zelf verandert natuurlijk ook! Dit brengt kosten met zich mee, namelijk $c_j$. 
+
+\textbf{Nu samen in $z_j - c_j$}
+
+
+$z_j - c_j$ is dus hoeveel de winst verandert (vermindert) als je non-basisvariabele $x_j$ met één verhoogt. Als je minimaliseert, wil je dat $z_j - c_j$ positief is. Verhoging van $x_j$ betekent dan immers een verlaging van de objectieve waarde $z$! Bij maximaliseren is het precies andersom. Dan wil je dat $z_j - c_j < 0$. 
 
 \end{description}
 
