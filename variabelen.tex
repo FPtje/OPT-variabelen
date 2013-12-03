@@ -99,7 +99,8 @@ Feasible point & Een assignment van waarden voor variabelen $x_1, ..., x_n$ die 
 \hline
 Feasible region & De ruimte die bestaat uit alle feasible points. Heeft de vorm van een simplex. \\
 \hline
-Slack variable & Beslissingsvariabele die toegevoegd wordt om een constraint in de vorm \\ &van een ongelijkheid naar een gelijkheid (van b.v. $\displaystyle\sum\limits_{i = 1}^n \textbf{a}_{1i}x_i \geq \textbf{b}$ naar $\displaystyle\sum\limits_{i = 1}^n \textbf{a}_{1i}x_i + x_{n + 1} = \textbf{b}$) \\
+Slack variable & Beslissingsvariabele die toegevoegd wordt om een constraint in de vorm \\
+(Spelingsvariabele) & van een ongelijkheid naar een gelijkheid (van b.v. $\displaystyle\sum\limits_{i = 1}^n \textbf{a}_{1i}x_i \geq \textbf{b}$ naar $\displaystyle\sum\limits_{i = 1}^n \textbf{a}_{1i}x_i + x_{n + 1} = \textbf{b}$) \\
 & Bij een slack variable hoort weer een extra kolom bij de $\textbf{A}$ matrix. \\
 \hline
 Standard form & Notatie van optimaliseringsprobleem waar alle constraints gelijkheden zijn.\\
@@ -112,6 +113,11 @@ Basisoplossing & Bij een basisoplossing geldt altijd dat $\textbf{x}_N = 0$ en $
 (TBO) & Een basisoplossing is altijd een toegestane oplossing, maar het is \textit{niet} altijd optimaal. \\
  & Een basisoplossing komt overeen met een extreem punt. \\
  & een ''\textit{degenerate basic solution}`` is een basisoplossing waarbij $x_{Bi}$ = 0 voor één of meer $i$. \\
+\hline
+Artificial & Een variabele die toegevoegd wordt in two-phase method om tot een TBO te komen. \\
+variable & Verwar deze absoluut niet met spelingsvariabelen! \\
+(kunstmatige & Je wilt altijd zo snel mogelijk van je artificial variables af komen (dus op waarde 0 hebben.) \\
+variabele) & \\
 %\hline
 % & \\
 \hline
